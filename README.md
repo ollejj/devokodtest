@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Coding test for Devoteam | Movie search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+If you don't have `node` already, download and install it here: https://nodejs.org/en/download
 
-Currently, two official plugins are available:
+#### Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+First you need to install the dependencies:
+`npm run install`
+Second run the dev server:
+`npm run dev`
+To run tests:
+`npm run test`
 
-## Expanding the ESLint configuration
+## Developer notes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### Testing
 
-- Configure the top-level `parserOptions` property like this:
+I was not able to create any more unit tests since React is a bit tricky to test for apart
+from if a component has rendered or not and I don't have any heavy logic functions other than hooks.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+In the suite you will find an commented-out testcase to test the useQuery hook that I did not manage to finish.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Improvements
+
+Some improvements I wish I had more time to implement:
+
+- More test cases
+- Responsive UI
+- Save query state in URL, making searches sharable through links (eg. /?q=finding+nemo)
