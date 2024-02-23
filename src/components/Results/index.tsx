@@ -9,7 +9,7 @@ export const Results = () => {
   console.log(data);
 
   return (
-    <div className={style.container}>
+    <div className={style.container} data-testid="resultsBox">
       {data && data.map((item) => <ResultItem key={item.id} {...item} />)}
     </div>
   );

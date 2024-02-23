@@ -33,6 +33,13 @@
 
   color: #cccccc;
   font-size: 1.2em;
+
+  cursor: pointer;
+
+  background-image: url("../../icons/magnify.svg");
+  background-size: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 ::placeholder {

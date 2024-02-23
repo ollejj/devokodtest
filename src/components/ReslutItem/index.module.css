@@ -16,7 +16,7 @@
 }
 
 .title {
-  font-size: 1.6em;
+  font-size: 1.2em;
   width: 256px;
 }
 
@@ -43,6 +43,36 @@
 .genres {
   display: flex;
   gap: 0.5em;
+}
+
+.runtime {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.clock {
+  background-image: url("../../icons/time.svg");
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+
+.popularity {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.people {
+  background-image: url("../../icons/popularity.svg");
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
 }
 
 .genres > p {

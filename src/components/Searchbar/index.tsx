@@ -13,6 +13,8 @@ export const Searchbar = () => {
     setValue,
   } = useForm();
 
+  console.log(errors);
+
   const { setInput } = useSearchContext();
 
   const { data } = useAutocomplete(watch("search"));
@@ -40,10 +42,8 @@ export const Searchbar = () => {
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
-      <button className={style.submit} type="submit">
-        Search
-      </button>
-      <div className={style.suggestion_container}>
+      <button className={style.submit} type="submit"></button>
+      <div className={style.suggestion_container} data-testid="suggestionBox">
         {data &&
           isFocused &&
           data.map((item: string) => {

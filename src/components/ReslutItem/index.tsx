@@ -43,8 +43,14 @@ export const ResultItem = ({
             <p>{genre}</p>
           ))}
         </div>
-        <div className={style.runtime}>Duration: {convertRuntime(runtime)}</div>
-        <div className={style.popularity}>Popularity: {popularity}</div>
+        <div className={style.runtime}>
+          <div className={style.clock}></div>
+          {convertRuntime(runtime)}
+        </div>
+        <div className={style.popularity}>
+          <div className={style.people}></div>
+          {Math.ceil(popularity)}
+        </div>
       </div>
       <div className={style.overview}>{overview}</div>
     </div>

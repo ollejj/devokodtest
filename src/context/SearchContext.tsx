@@ -47,6 +47,8 @@ export const SearchContextProvider = ({ children }: TSearchProviderProps) => {
     );
   });
 
+  console.log(isLoading, error);
+
   return (
     <SearchContext.Provider value={{ input, setInput, data }}>
       {children}
