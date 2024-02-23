@@ -20,6 +20,10 @@ from if a component has rendered or not and I don't have any heavy logic functio
 
 In the suite you will find an commented-out testcase to test the useQuery hook that I did not manage to finish.
 
+#### Errors
+
+I wasn't able to implement proper error handling for the fetches and user inputs.
+
 #### Improvements
 
 Some improvements I wish I had more time to implement:
