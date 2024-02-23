@@ -45,7 +45,7 @@ export const Searchbar = () => {
           isFocused &&
           data.map((item: string) => {
             return (
-              <button type="submit" onClick={() => handleItemClick(item)}>
+              <button type="submit" onMouseDown={() => handleItemClick(item)}>
                 {item}
               </button>
             );
