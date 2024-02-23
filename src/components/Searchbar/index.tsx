@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAutocomplete } from "../../hooks/useAutocomplete";
 import style from "./index.module.css";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useSearchContext } from "../../context/SearchContext";
 
 export const Searchbar = () => {
   const {
@@ -12,10 +13,14 @@ export const Searchbar = () => {
     setValue,
   } = useForm();
 
+  const { setInput } = useSearchContext();
+
   const { data } = useAutocomplete(watch("search"));
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
-  const onSubmit: SubmitHandler<any> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setInput(data.search);
+  };
 
   const handleItemClick = (item: string) => {
     setValue("search", item);
