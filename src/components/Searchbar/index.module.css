@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 32px;
+  align-items: center;
+}
+
+.input {
+  width: 512px;
+  height: 64px;
+  padding: 8px 16px 8px 16px;
+
+  border-radius: 16px;
+  background-color: var(--main-bg);
+  box-shadow: var(--shadow);
+
+  color: #cccccc;
+  font-size: 1.2em;
+}
+
+.submit {
+  height: 80px;
+  width: 80px;
+
+  border-radius: 16px;
+  background-color: var(--main-bg);
+  box-shadow: var(--shadow);
+
+  color: #cccccc;
+  font-size: 1.2em;
+}
+
+::placeholder {
+  color: #cccccc;
+}
+
+.suggestion {
+  color: #cccccc;
+}

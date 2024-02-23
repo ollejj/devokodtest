@@ -6,5 +6,12 @@
   border: 0;
 }
 
+:root {
+  --main-bg: #1a3756;
+  --shadow: 7px 7px 14px #0a1622, -7px -7px 14px #2a588a;
+  --shadow-inset: inset 7px 7px 14px #0a1622, inset -7px -7px 14px #2a588a;
+}
+
 body {
+  background-color: var(--main-bg);
 }

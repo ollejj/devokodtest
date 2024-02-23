@@ -33,19 +33,26 @@ export const Searchbar = () => {
   return (
     <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
       <input
+        className={style.input}
         type="text"
         placeholder="Search..."
         {...register("search")}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
-      <button type="submit">Search</button>
+      <button className={style.submit} type="submit">
+        Search
+      </button>
       <div>
         {data &&
           isFocused &&
           data.map((item: string) => {
             return (
-              <button type="submit" onMouseDown={() => handleItemClick(item)}>
+              <button
+                className={style.suggestion}
+                type="submit"
+                onMouseDown={() => handleItemClick(item)}
+              >
                 {item}
               </button>
             );
