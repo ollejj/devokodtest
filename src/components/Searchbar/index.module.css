@@ -84,3 +84,9 @@
 .suggestion:hover {
   background-color: var(--main-bg-hover);
 }
+
+.no_results {
+  color: #cccccc;
+  padding: 4px 8px 4px 8px;
+  font-size: 0.8em;
+}

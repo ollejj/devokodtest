@@ -7,3 +7,7 @@
   gap: 2em;
   justify-content: space-evenly;
 }
+
+.no_results {
+  color: #cccccc;
+}

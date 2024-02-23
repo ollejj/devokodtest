@@ -23,10 +23,12 @@ const SearchContext = createContext<{
   data: TResultItem[];
   input: string;
   setInput: Dispatch<SetStateAction<string>>;
+  isError: boolean;
 }>({
   data: [],
   input: "",
   setInput: () => {},
+  isError: false,
 });
 
 export const useSearchContext = () => useContext(SearchContext);
@@ -38,7 +40,7 @@ type TSearchProviderProps = {
 export const SearchContextProvider = ({ children }: TSearchProviderProps) => {
   const [input, setInput] = useState<string>("");
 
-  const { data, isLoading, error } = useQuery(["search", input], () => {
+  const { data, isLoading, isError } = useQuery(["search", input], () => {
     return (
       input?.length > 0 &&
       fetch(`https://api.movies.dcts.se/rpc/movies_search?q=${input}`).then(
@@ -47,10 +49,10 @@ export const SearchContextProvider = ({ children }: TSearchProviderProps) => {
     );
   });
 
-  console.log(isLoading, error);
+  console.log(isLoading, isError);
 
   return (
-    <SearchContext.Provider value={{ input, setInput, data }}>
+    <SearchContext.Provider value={{ input, setInput, data, isError }}>
       {children}
     </SearchContext.Provider>
   );

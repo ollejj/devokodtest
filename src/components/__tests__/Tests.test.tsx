@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { Searchbar } from "./../Searchbar/index";
+import { Searchbar } from "../Searchbar/index";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactNode } from "react";
 import { Results } from "../Results";

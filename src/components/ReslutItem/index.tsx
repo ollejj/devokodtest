@@ -20,6 +20,7 @@ export const ResultItem = ({
   genres,
 }: TResultItemProps) => {
   const convertRuntime = (minutes: number) => {
+    if (minutes <= 0) return "00:00";
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
 

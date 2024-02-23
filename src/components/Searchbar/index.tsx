@@ -17,7 +17,7 @@ export const Searchbar = () => {
 
   const { setInput } = useSearchContext();
 
-  const { data } = useAutocomplete(watch("search"));
+  const { data, isLoading, isError } = useAutocomplete(watch("search"));
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -44,6 +44,14 @@ export const Searchbar = () => {
       />
       <button className={style.submit} type="submit"></button>
       <div className={style.suggestion_container} data-testid="suggestionBox">
+        {isError && <p className={style.no_results}>Invalid character</p>}
+        {isLoading && <p className={style.no_results}>Loading...</p>}
+        {!data ||
+          (data.length === 0 && (
+            <p className={style.no_results}>
+              No Results for "{watch("search")}"
+            </p>
+          ))}
         {data &&
           isFocused &&
           data.map((item: string) => {
