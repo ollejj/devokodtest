@@ -1,3 +1,5 @@
+import style from "./index.module.css";
+
 type TResultItemProps = {
   title: string;
   runtime: number;
@@ -17,15 +19,34 @@ export const ResultItem = ({
   overview,
   genres,
 }: TResultItemProps) => {
+  const convertRuntime = (minutes: number) => {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+
+    const hoursString = hours < 10 ? "0" + hours : hours.toString();
+    const minutesString =
+      remainingMinutes < 10
+        ? "0" + remainingMinutes
+        : remainingMinutes.toString();
+
+    return hoursString + ":" + minutesString;
+  };
+
   return (
-    <div>
-      <div>{title}</div>
-      <div>{runtime}</div>
-      <div>{released}</div>
-      <div>{poster}</div>
-      <div>{popularity}</div>
-      <div>{overview}</div>
-      <div>{genres}</div>
+    <div className={style.container}>
+      <img className={style.poster} src={poster} />
+      <div className={style.col}>
+        <h1 className={style.title}>{title}</h1>
+        <div className={style.released}>{released}</div>
+        <div className={style.genres}>
+          {genres.map((genre) => (
+            <p>{genre}</p>
+          ))}
+        </div>
+        <div className={style.runtime}>Duration: {convertRuntime(runtime)}</div>
+        <div className={style.popularity}>Popularity: {popularity}</div>
+      </div>
+      <div className={style.overview}>{overview}</div>
     </div>
   );
 };

@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: min-content;
+  color: #cccccc;
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  gap: 1em;
+}
+
+.poster {
+  width: 10%;
+  align-self: center;
+  border-radius: 16px 0 0 16px;
+  object-fit: fill;
+}
+
+.title {
+  font-size: 1.6em;
+  width: 256px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 8px 8px 8px 0;
+  border-right: 1px solid #0a1622;
+}
+
+.overview {
+  word-wrap: break-word;
+  padding: 8px 8px 8px 0;
+
+  width: 100%;
+}
+
+.released {
+  color: #b1b1b1;
+  font-weight: 700;
+}
+
+.genres {
+  display: flex;
+  gap: 0.5em;
+}
+
+.genres > p {
+  background-color: #0a1622;
+  padding: 4px 8px 4px 8px;
+  border-radius: 16px;
+  font-size: 0.7em;
+}
