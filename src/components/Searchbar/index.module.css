@@ -40,6 +40,12 @@
   background-size: 48px;
   background-position: center;
   background-repeat: no-repeat;
+
+  transition: box-shadow 0.3s;
+}
+
+.submit:active {
+  box-shadow: var(--shadow-inset);
 }
 
 ::placeholder {
@@ -58,6 +64,8 @@
 
   border-radius: 16px;
   box-shadow: var(--shadow);
+
+  background-color: var(--main-bg);
 }
 
 .suggestion {
