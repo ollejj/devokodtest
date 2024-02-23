@@ -5,6 +5,9 @@
   gap: 1em;
   padding-top: 32px;
   align-items: center;
+
+  width: min-content;
+  position: relative;
 }
 
 .input {
@@ -36,6 +39,29 @@
   color: #cccccc;
 }
 
+.suggestion_container {
+  position: absolute;
+  top: 128px;
+  left: auto;
+  right: auto;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .suggestion {
+  background-color: var(--main-bg);
+
   color: #cccccc;
+  text-align: left;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px 4px 8px;
+  cursor: pointer;
+}
+
+.suggestion:hover {
+  background-color: var(--main-bg-hover);
 }

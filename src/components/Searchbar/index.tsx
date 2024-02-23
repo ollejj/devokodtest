@@ -43,7 +43,7 @@ export const Searchbar = () => {
       <button className={style.submit} type="submit">
         Search
       </button>
-      <div>
+      <div className={style.suggestion_container}>
         {data &&
           isFocused &&
           data.map((item: string) => {
