@@ -13,7 +13,6 @@ export const Searchbar = () => {
   } = useForm();
 
   const { data } = useAutocomplete(watch("search"));
-
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
   const onSubmit: SubmitHandler<any> = (data) => console.log(data);
